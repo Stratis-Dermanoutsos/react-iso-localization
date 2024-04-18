@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import ISO6391 from 'iso-639-1';
-import type IsoLocalizationDictionary from './iso-localization-dictionary';
 
 /**
  * A hook that detects the device's preferred language and returns the selected localized string.
@@ -13,7 +12,7 @@ import type IsoLocalizationDictionary from './iso-localization-dictionary';
  * 
  * @returns An object containing the locales object and the get, getNoAccents and getCapitalized functions.
  */
-const useIsoLocalization = (localesDictionary: IsoLocalizationDictionary) => {
+const useIsoLocalization = (localesDictionary) => {
     // Check if the provided locales are valid
     const availableLocales = Object.keys(localesDictionary);
     availableLocales.forEach(locale => {
@@ -40,11 +39,11 @@ const useIsoLocalization = (localesDictionary: IsoLocalizationDictionary) => {
     );
 
     // Get selected locale
-    const [selectedLocale, setSelectedLocale] = useState<string>(defaultLocale);
+    const [selectedLocale, setSelectedLocale] = useState(defaultLocale);
     if (!ISO6391.validate(selectedLocale))
         throw new Error(`INVALID SELECTED LOCALE: ${selectedLocale}`);
 
-    const locales: { [key: string]: string } = localesDictionary[selectedLocale];
+    const locales = localesDictionary[selectedLocale];
 
     useEffect(() => {
         // console.log('Local storage: ' + localStorage.getItem('locale')); //? Debug
@@ -62,7 +61,7 @@ const useIsoLocalization = (localesDictionary: IsoLocalizationDictionary) => {
      * @param key The key of the string to get.
      * @returns The string corresponding to the key.
      */
-    const get = (key: string): string => {
+    const get = (key) => {
         if (!locales[key])
             throw new Error(`INVALID KEY: ${key}`);
 
@@ -74,7 +73,7 @@ const useIsoLocalization = (localesDictionary: IsoLocalizationDictionary) => {
      * 
      * @param locale The locale code to set.
      */
-    const set = (locale: string) => {
+    const set = (locale) => {
         setSelectedLocale(prev => {
             if (prev === locale)
                 return prev;
@@ -90,7 +89,7 @@ const useIsoLocalization = (localesDictionary: IsoLocalizationDictionary) => {
      * @param key The key of the string to get
      * @returns The string corresponding to the key, without accents
      */
-    const getNoAccents = (key: string): string => {
+    const getNoAccents = (key) => {
         return get(key).normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     };
 
@@ -100,7 +99,7 @@ const useIsoLocalization = (localesDictionary: IsoLocalizationDictionary) => {
      * @param key The key of the string to get
      * @returns The string corresponding to the key, in uppercase
      */
-    const getCapitalized = (key: string): string => {
+    const getCapitalized = (key) => {
         return getNoAccents(key).toUpperCase();
     };
 
@@ -123,4 +122,4 @@ const useIsoLocalization = (localesDictionary: IsoLocalizationDictionary) => {
     };
 };
 
-export default useIsoLocalization;
+module.exports = useIsoLocalization;

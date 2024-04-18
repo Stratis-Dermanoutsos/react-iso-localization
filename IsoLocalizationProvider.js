@@ -1,8 +1,8 @@
+import React from 'react';
 import IsoLocalizationContext from './iso-localization-context';
 import useIsoLocalization from './useIsoLocalization';
-import IsoLocalizationDictionary from './iso-localization-dictionary';
 
-const IsoLocalizationProvider = (props: React.PropsWithChildren<{ locales: IsoLocalizationDictionary }>): JSX.Element => {
+const IsoLocalizationProvider = (props) => {
     const translator = useIsoLocalization(props.locales);
 
     return (
@@ -12,4 +12,4 @@ const IsoLocalizationProvider = (props: React.PropsWithChildren<{ locales: IsoLo
     );
 };
 
-export default IsoLocalizationProvider;
+module.exports = IsoLocalizationProvider;
