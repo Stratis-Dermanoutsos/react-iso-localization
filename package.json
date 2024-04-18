@@ -1,0 +1,19 @@
+{
+  "name": "react-iso-localization",
+  "version": "0.9.9",
+  "description": "Localization package for ISO 639-1 language codes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "iso",
+    "iso-369-1",
+    "localization",
+    "react",
+    "react-iso",
+    "react-iso-localization"
+  ],
+  "author": "Stratis Dermanoutsos",
+  "license": "MIT"
+}
