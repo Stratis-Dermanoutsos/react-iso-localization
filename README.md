@@ -2,7 +2,7 @@
 
 Localization for **ISO 639** language codes. We support the `Set 1` abbreviation codes from <https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes>.
 
-This package is heavily dependent on [iso-639-1](https://www.npmjs.com/package/iso-639-1).
+This package is heavily dependent on [iso-639-1](https://www.npmjs.com/package/iso-639-1) and setup to run in a [Vite](https://vitejs.dev) project.
 
 ## Installing
 <!-- TODO -->
