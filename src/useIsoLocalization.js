@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 import ISO6391 from 'iso-639-1';
+import DEFAULT_LOCALE from './default-locale';
 
 /**
  * A hook that detects the device's preferred language and returns the selected localized string.
+ * 
+ * @param localesDictionary An object containing the locales object for each supported language.
  * 
  * @example
  * const translator = useLocalization();
@@ -20,23 +23,7 @@ const useIsoLocalization = (localesDictionary) => {
             throw new Error(`INVALID PROVIDED LOCALE: ${locale}`);
     });
 
-    /**
-     * Determine the default locale.
-     * 
-     * The default locale is determined in the following order:
-     * 1. Local storage
-     * 2. Environment variable
-     * 3. System language
-     */
-    //
-    let systemLanguageCode = Intl.DateTimeFormat().resolvedOptions().locale.split('-')[0];
-    if (!availableLocales.includes(systemLanguageCode))
-        systemLanguageCode = 'en';
-    const defaultLocale = (
-        localStorage.getItem('locale') || // Local storage
-        import.meta.env.VITE_DEFAULT_LOCALE || // Environment variable
-        systemLanguageCode // System
-    );
+    const defaultLocale = availableLocales.includes(DEFAULT_LOCALE) ? DEFAULT_LOCALE : 'en';
 
     // Get selected locale
     const [selectedLocale, setSelectedLocale] = useState(defaultLocale);
@@ -46,14 +33,9 @@ const useIsoLocalization = (localesDictionary) => {
     const locales = localesDictionary[selectedLocale];
 
     useEffect(() => {
-        // console.log('Local storage: ' + localStorage.getItem('locale')); //? Debug
-        // console.log('Environment: ' + import.meta.env.VITE_DEFAULT_LOCALE); //? Debug
-        // console.log('System: ' + systemLanguageCode); //? Debug
-        // console.log('Default locale: ' + defaultLocale); //? Debug
-
         if (!localStorage.getItem('locale'))
             set(defaultLocale);
-    }, [systemLanguageCode, defaultLocale]);
+    }, [defaultLocale]);
 
     /**
      * Gets the string corresponding to the key from the locales object.
@@ -104,8 +86,9 @@ const useIsoLocalization = (localesDictionary) => {
     };
 
     /**
+     * Gets the native name of the selected locale.
      * 
-     * @returns The native name of the selected locale
+     * @returns The native name of the selected locale.
      */
     const getLocaleNativeName = () => {
         return ISO6391.getNativeName(selectedLocale);

@@ -1,13 +1,6 @@
 import React from 'react';
 
-// Exporting the useIsoLocalization type
-export type useIsoLocalization = (localesDictionary: {
-    locales: {
-        [key: string]: {
-            [key: string]: string;
-        }
-    }
-}) => {
+export type IsoLocalizationHook = {
     availableLocales: string[],
     locale: string,
     get: (key: string) => string,
@@ -16,3 +9,12 @@ export type useIsoLocalization = (localesDictionary: {
     getCapitalized: (key: string) => string,
     getLocaleNativeName: () => string
 };
+
+// Exporting the useIsoLocalization type
+export type useIsoLocalization = (localesDictionary: {
+    locales: {
+        [key: string]: {
+            [key: string]: string;
+        }
+    }
+}) => IsoLocalizationHook;

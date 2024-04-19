@@ -6,4 +6,5 @@ export type IsoLocalizationProviderProps = React.PropsWithChildren<{
         }
     }
 }>;
+
 export type IsoLocalizationProvider = (props: IsoLocalizationProviderProps) => React.JSX.Element;
