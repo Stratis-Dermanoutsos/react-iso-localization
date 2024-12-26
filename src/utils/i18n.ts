@@ -50,7 +50,7 @@ const setupI18n = (resources?: Resource) => {
     // Fallback to the available languages if the resources are not provided
     const fallback = resources !== undefined ?
         Object.keys(resources) :
-        ['el', 'en'];
+        ['en'];
 
     i18n.use(initReactI18next) // passes i18n down to react-i18next
     .init({
