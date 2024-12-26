@@ -1,9 +1,9 @@
-import useI18n from './hooks/useI18n';
+import useI18n from './src/hooks/useI18n';
 import setupI18n, {
     defaultLanguage,
     getNativeName,
     getShortNativeName
-} from './utils/i18n';
+} from './src/utils/i18n';
 
 export {
     defaultLanguage,
