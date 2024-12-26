@@ -2,7 +2,14 @@
 
 Localization for **ISO 639** language codes. We support the `Set 1` abbreviation codes from <https://en.wikipedia.org/wiki/List_of_ISO_639_language_codes>.
 
-This package is heavily dependent on [iso-639-1](https://www.npmjs.com/package/iso-639-1) and setup to run in a [Vite](https://vitejs.dev) project.
+This package is heavily dependent on [i18next](https://www.i18next.com), [iso-639-1](https://www.npmjs.com/package/iso-639-1) and setup to run in a [Vite](https://vitejs.dev) project.
+
+## Features
+
+- No Context or global state needed
+- Single-point setup
+- Use your own locales
+- 2-step process to support more languages
 
 ## Installing
 <!-- TODO -->
@@ -11,7 +18,7 @@ This package is heavily dependent on [iso-639-1](https://www.npmjs.com/package/i
 
 This package accepts files like `en.json` for English, `el.json` for Greek, ...
 
-It was developed with the files exported from [POEditor](https://poeditor.com) in the **`Key-Value JSON`** format in mind.
+It was developed with the files exported from [POEditor](https://poeditor.com) (or similar tools) in the **`Key-Value JSON`** format in mind.
 
 Let's say we have 3 JSON files.
 
@@ -64,6 +71,7 @@ Let's say we have 3 JSON files.
    ```
 
 ## Examples
+<!-- TODO -->
 
 <!-- TODO: Structure the data required for the hook -->
 

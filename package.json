@@ -1,7 +1,7 @@
 {
   "name": "react-iso-localization",
   "version": "0.9.9",
-  "description": "Localization package for ISO 639-1 language codes",
+  "description": "Localization package for React combining i18next & iso-639-1",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -14,12 +14,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
+    "i18n",
+    "i18next",
     "iso",
+    "iso-369",
     "iso-369-1",
     "localization",
-    "react",
-    "react-iso",
-    "react-iso-localization"
+    "react"
   ],
   "author": "Stratis Dermanoutsos",
   "license": "MIT",
