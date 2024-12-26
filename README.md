@@ -4,6 +4,13 @@ Localization for **ISO 639** language codes. We support the `Set 1` abbreviation
 
 This package is heavily dependent on [i18next](https://www.i18next.com), [iso-639-1](https://www.npmjs.com/package/iso-639-1) and setup to run in a [Vite](https://vitejs.dev) project.
 
+## Features
+
+- No Context or global state needed
+- Single-point setup
+- Use your own locales
+- 2-step process to support more languages
+
 ## Installing
 <!-- TODO -->
 
@@ -64,6 +71,7 @@ Let's say we have 3 JSON files.
    ```
 
 ## Examples
+<!-- TODO -->
 
 <!-- TODO: Structure the data required for the hook -->
 
