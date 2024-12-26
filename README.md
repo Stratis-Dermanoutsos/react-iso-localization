@@ -12,7 +12,8 @@ This package is heavily dependent on [i18next](https://www.i18next.com), [iso-63
 - 2-step process to support more languages
 
 ## Installing
-<!-- TODO -->
+
+Simply run `npm i react-iso-localization`
 
 ## How to use
 
@@ -50,31 +51,40 @@ Let's say we have 3 JSON files.
 
 > For the sake of this documentation, I save all locale files in the directory `/src/resources/locales/`.
 
-1. Import the files and provide the `JavaScript` / `TypeScript` object.
+1. Initialize the library inside `App.js` / `App.jsx` / `App.ts` / `App.tsx`
 
    ```ts
+   import { setupI18n } from 'react-iso-localization';
    import el from 'resources/locales/el.json';
    import en from 'resources/locales/en.json';
    import ro from 'resources/locales/ro.json';
 
-   // TypeScript
-   const LOCALES: { [key: string]: { [key: string]: string } } = {
-       el, en, ro
-   };
+   setupI18n({
+       el: { translation: el },
+       en: { translation: en },
+       ro: { translation: ro }
+   });
 
-   // JavaScript
-   const LOCALES = {
-       el, en, ro
+   export const App = () => {
+       ...
    };
-
-   export default LOCALES;
    ```
 
-## Examples
-<!-- TODO -->
+2. Use it by calling the hook in any of your components
 
-<!-- TODO: Structure the data required for the hook -->
+   ```tsx
+   import React from 'react';
+   import { useI18n } from 'react-iso-localization';
 
-<!-- TODO: Local state -->
+   const test = (): React.JSX.Element => {
+       const i18n = useI18n();
 
-<!-- TODO: Context provider and global state -->
+       return (
+           <React.Fragment>
+               {useI18n.get('HELLO_WORLD')}
+           </React.Fragment>
+       );
+   };
+
+   export default test;
+   ```
