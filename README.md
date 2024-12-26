@@ -11,7 +11,7 @@ This package is heavily dependent on [i18next](https://www.i18next.com), [iso-63
 
 This package accepts files like `en.json` for English, `el.json` for Greek, ...
 
-It was developed with the files exported from [POEditor](https://poeditor.com) in the **`Key-Value JSON`** format in mind.
+It was developed with the files exported from [POEditor](https://poeditor.com) (or similar tools) in the **`Key-Value JSON`** format in mind.
 
 Let's say we have 3 JSON files.
 
