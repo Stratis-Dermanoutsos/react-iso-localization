@@ -1,6 +1,7 @@
 import { useCallback, useEffect } from 'react';
 import { TOptions } from 'i18next';
 import { useTranslation } from 'react-i18next';
+import iso6391 from 'iso-639-1';
 
 /**
  * A hook that detects the device's preferred language and returns the selected localized string.
@@ -33,8 +34,13 @@ const useI18n = () => {
      * Sets the locale code to the given value.
      * 
      * @param locale The locale code to set
+     * @example
+     * i18n.set('en');
      */
     const set = useCallback((locale: string) => {
+        if (!iso6391.validate(locale))
+            throw new Error(`Invalid locale code: ${locale}`);
+
         i18n.changeLanguage(locale);
         localStorage.setItem('locale', locale);
     }, [i18n]);
