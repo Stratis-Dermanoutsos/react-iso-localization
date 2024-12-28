@@ -89,6 +89,26 @@ Let's say we have 3 JSON files.
    export default TestComponent;
    ```
 
+### Set locale
+
+```tsx
+import React from 'react';
+import { useI18n } from 'react-iso-localization';
+
+const SetToGreek = (): React.JSX.Element => {
+    const i18n = useI18n();
+
+    const onClick = () => i18n.set('el');
+    // const onClick = () => i18n.set('xx'); // throws error
+
+    return (
+        <button onClick={onClick} />
+    );
+};
+
+export default SetToGreek;
+```
+
 ## Developer notes
 
 This package was created reading [TypeScript NPM Package Publishing: A Beginner’s Guide](https://pauloe-me.medium.com/typescript-npm-package-publishing-a-beginners-guide-40b95908e69c).
