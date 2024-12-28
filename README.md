@@ -76,7 +76,7 @@ Let's say we have 3 JSON files.
    import React from 'react';
    import { useI18n } from 'react-iso-localization';
 
-   const test = (): React.JSX.Element => {
+   const TestComponent = (): React.JSX.Element => {
        const i18n = useI18n();
 
        return (
@@ -86,7 +86,7 @@ Let's say we have 3 JSON files.
        );
    };
 
-   export default test;
+   export default TestComponent;
    ```
 
 ## Developer notes
