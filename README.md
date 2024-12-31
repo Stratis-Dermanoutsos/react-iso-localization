@@ -39,7 +39,7 @@ Let's say we have 3 JSON files.
 
    ```json
    {
-       "HELLO_WORLD": "Γεια σου κόσμε!"
+       "HELLO_WORLD": "Γεια σου, κόσμε!"
    }
    ```
 
