@@ -144,7 +144,7 @@ export default SetToGreek;
   E.g.
 
   ```ts
-  console.log(i18n.get('HELLO_WORLD'));
+  console.log(i18n.getNoAccents('HELLO_WORLD'));
   // Returns Γεια σου, κοσμε!
   ```
 
@@ -155,7 +155,7 @@ export default SetToGreek;
   E.g.
 
   ```ts
-  console.log(i18n.get('HELLO_WORLD'));
+  console.log(i18n.getCapitalized('HELLO_WORLD'));
   // Returns ΓΕΙΑ ΣΟΥ, ΚΟΣΜΕ!
   ```
 
