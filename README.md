@@ -8,6 +8,7 @@ This package is heavily dependent on [i18next](https://www.i18next.com), [iso-63
 
 - No Context or global state needed
 - Single-point setup
+- Docker ready
 - Use your own locales
 - 2-step process to support more languages
 
