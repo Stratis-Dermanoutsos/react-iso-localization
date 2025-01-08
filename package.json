@@ -1,6 +1,6 @@
 {
   "name": "react-iso-localization",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Localization package for React combining i18next & iso-639-1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -17,6 +17,7 @@
   },
   "scripts": {
     "build": "tsup",
+    "postinstall": "npx typesync",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -31,17 +32,17 @@
   "author": "Stratis Dermanoutsos",
   "license": "MIT",
   "dependencies": {
-    "i18next": "^24.2.0",
+    "i18next": "^24.2.1",
     "iso-639-1": "^3.1.3",
-    "react": "^18.3.0",
-    "react-i18next": "^15.2.0"
+    "react": "^18.3.1",
+    "react-i18next": "^15.4.0"
   },
   "devDependencies": {
-    "@types/node": "^22.10.2",
-    "@types/react": "^19.0.2",
+    "@types/node": "^22.10.5",
+    "@types/react": "^18.3.1",
     "ts-node": "^10.9.2",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
-    "vite": "^6.0.6"
+    "vite": "^6.0.7"
   }
 }

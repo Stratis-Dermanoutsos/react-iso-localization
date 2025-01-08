@@ -1,11 +1,13 @@
 import i18n, { Resource } from 'i18next';
 import iso6391 from 'iso-639-1';
 import { initReactI18next } from 'react-i18next';
+import { stringHasValue } from './string';
 
 const systemLanguageCode = Intl.DateTimeFormat().resolvedOptions().locale.split('-')[0];
 export const defaultLanguage = (
     localStorage.getItem('locale') || // Local storage
-    import.meta.env.VITE_DEFAULT_LOCALE || // Environment variable
+    stringHasValue(import.meta.env.VITE_DEFAULT_LOCALE) ?
+    import.meta.env.VITE_DEFAULT_LOCALE : // Environment variable
     systemLanguageCode // System
 );
 
