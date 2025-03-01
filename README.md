@@ -180,6 +180,32 @@ export default SetToGreek;
   First, it checks in the local storage for the user's preference.
   Then, if that is not defined, the library gets the default language from the environment variables. This is useful for applications that want all users to have a certain language as default.
   Lastly, if nothing is set in the above instances, the user's system's language is used.
+- `getMaximizedLocale(string)` method
+
+  This method returns the maximized locale string of a language.
+  E.g. `el-Grek-GR` for Greek, `en-Latn-US` for English, ...
+
+  ```ts
+  import { getMaximizedLocale } from 'react-iso-localization';
+
+  console.log(getMaximizedLocale('el'))
+  // Returns el-Grek-GR
+  ```
+
+  > Uses [Intl.Locale](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) API in the background.
+- `getLanguageTag(string)` method
+
+  This method returns the maximized locale string of a language.
+  E.g. `el-GR` for Greek, `en-US` for English, ...
+
+  ```ts
+  import { getLanguageTag } from 'react-iso-localization';
+
+  console.log(getLanguageTag('el'))
+  // Returns el-GR
+  ```
+
+  > Uses [Intl.Locale](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) API in the background.
 - `getShortNativeName(string)` method
 
   This method simply returns the 2 first characters of a language's native name.
