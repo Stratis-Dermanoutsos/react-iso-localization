@@ -1,6 +1,6 @@
 {
   "name": "react-iso-localization",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Localization package for React combining i18next & iso-639-1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
