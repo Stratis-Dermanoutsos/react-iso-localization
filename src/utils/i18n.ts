@@ -36,6 +36,39 @@ export const getShortNativeName = (code: string) => {
 export const getNativeName = (code: string) => iso6391.getNativeName(code);
 
 /**
+ * Returns the maximized locale for the provided language code.
+ * 
+ * @param code The language code.
+ * @returns The maximized locale for the provided language code.
+ * @example
+ * getMaximizedLocale('el'); // Returns 'el-Grek-GR'
+ * getMaximizedLocale('en'); // Returns 'en-Latn-US'
+ */
+export const getMaximizedLocale = (code: string): string => {
+    try {
+        return new Intl.Locale(code).maximize().toString();
+    } catch {
+        return code;
+    }
+};
+
+/**
+ * Returns the language tag for the provided language code.
+ * 
+ * @param code The language code.
+ * @returns The language tag for the provided language code.
+ * @example
+ * getLanguageTag('el'); // Returns 'el-GR'
+ * getLanguageTag('en'); // Returns 'en'
+ */
+export const getLanguageTag = (code: string): string => {
+    const localeMaximized = new Intl.Locale(code).maximize();
+    const region = localeMaximized.region;
+
+    return region ? `${code}-${region}` : code;
+};
+
+/**
  * Sets up the i18n instance to use the given resources.
  * 
  * @param resources The resources to use. The keys are the language codes and the values are the corresponding resources.
