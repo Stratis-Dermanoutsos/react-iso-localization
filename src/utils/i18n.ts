@@ -5,11 +5,11 @@ import { stringHasValue } from './string';
 
 const systemLanguageCode = Intl.DateTimeFormat().resolvedOptions().locale.split('-')[0];
 export const defaultLanguage = (
-    localStorage.getItem('locale') || // Local storage
+    localStorage.getItem('locale') || ( // Local storage
     stringHasValue(import.meta.env.VITE_DEFAULT_LOCALE) ?
     import.meta.env.VITE_DEFAULT_LOCALE : // Environment variable
     systemLanguageCode // System
-);
+));
 
 /**
  * Returns the short native name for the provided language code.
