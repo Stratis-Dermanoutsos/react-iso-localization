@@ -4,6 +4,16 @@ Localization for **ISO 639** language codes. We support the `Set 1` abbreviation
 
 This package is heavily dependent on [i18next](https://www.i18next.com), [iso-639-1](https://www.npmjs.com/package/iso-639-1) and setup to run in a [Vite](https://vitejs.dev) project.
 
+## Table of contents
+
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Getting started](#getting-started)
+   1. [Setup](#setup)
+   2. [Get a locale](#get-a-locale)
+   3. [Change language](#change-language)
+4. [Documentation](#documentation)
+
 ## Features
 
 - No Context or global state needed
@@ -12,7 +22,7 @@ This package is heavily dependent on [i18next](https://www.i18next.com), [iso-63
 - Use your own locales
 - 2-step process to support more languages
 
-## Installing
+## Installation
 
 Install through npm.
 
