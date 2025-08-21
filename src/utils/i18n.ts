@@ -68,6 +68,14 @@ export const getLanguageTag = (code: string): string => {
     return region ? `${code}-${region}` : code;
 };
 
+export const setLocale = (locale: string) => {
+    if (!iso6391.validate(locale))
+        throw new Error(`Invalid locale code: ${locale}`);
+
+    i18n.changeLanguage(locale);
+    localStorage.setItem('locale', locale);
+};
+
 /**
  * Sets up the i18n instance to use the given resources.
  * 

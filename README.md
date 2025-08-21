@@ -242,6 +242,11 @@ export default SetToGreek;
   // Returns Ελληνικά
   ```
 
+- `setLocale` method
+
+  This method sets the locale to the one provided.
+
+  > Uses `iso6391` to validate the provided locale.
 - `setupI18n` method
 
   It does exactly what it says it does. It sets up the whole library.
