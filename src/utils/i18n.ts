@@ -68,12 +68,19 @@ export const getLanguageTag = (code: string): string => {
     return region ? `${code}-${region}` : code;
 };
 
-export const setLocale = (locale: string) => {
-    if (!iso6391.validate(locale))
-        throw new Error(`Invalid locale code: ${locale}`);
+/**
+ * Sets the locale for the application to the provided language code.
+ * 
+ * @param code The language code.
+ * @example
+ * setLocale('el'); // Set the locale to 'el'
+ */
+export const setLocale = (code: string) => {
+    if (!iso6391.validate(code))
+        throw new Error(`Invalid locale code: ${code}`);
 
-    i18n.changeLanguage(locale);
-    localStorage.setItem('locale', locale);
+    i18n.changeLanguage(code);
+    localStorage.setItem('locale', code);
 };
 
 /**

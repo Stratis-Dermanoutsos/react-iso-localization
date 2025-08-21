@@ -198,7 +198,7 @@ export default SetToGreek;
   ```ts
   import { getMaximizedLocale } from 'react-iso-localization';
 
-  console.log(getMaximizedLocale('el'))
+  console.log(getMaximizedLocale('el'));
   // Returns el-Grek-GR
   ```
 
@@ -211,7 +211,7 @@ export default SetToGreek;
   ```ts
   import { getLanguageTag } from 'react-iso-localization';
 
-  console.log(getLanguageTag('el'))
+  console.log(getLanguageTag('el'));
   // Returns el-GR
   ```
 
@@ -224,7 +224,7 @@ export default SetToGreek;
   ```ts
   import { getShortNativeName } from 'react-iso-localization';
 
-  console.log(getShortNativeName('el'))
+  console.log(getShortNativeName('el'));
   // Returns ΕΛ
   ```
 
@@ -238,13 +238,20 @@ export default SetToGreek;
   ```ts
   import { getNativeName } from 'react-iso-localization';
 
-  console.log(getNativeName('el'))
+  console.log(getNativeName('el'));
   // Returns Ελληνικά
   ```
 
 - `setLocale` method
 
-  This method sets the locale to the one provided.
+  This method sets the locale for the application to the provided language code.
+
+  ```ts
+  import { setLocale } from 'react-iso-localization';
+
+  setLocale('el');
+  // Sets the app's locale to Greek
+  ```
 
   > Uses `iso6391` to validate the provided locale.
 - `setupI18n` method
