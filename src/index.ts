@@ -4,7 +4,8 @@ import setupI18n, {
     getLanguageTag,
     getMaximizedLocale,
     getNativeName,
-    getShortNativeName
+    getShortNativeName,
+    setLocale
 } from './utils/i18n';
 
 export {
@@ -13,6 +14,7 @@ export {
     getMaximizedLocale,
     getNativeName,
     getShortNativeName,
+    setLocale,
     setupI18n,
     useI18n
 };

@@ -69,6 +69,21 @@ export const getLanguageTag = (code: string): string => {
 };
 
 /**
+ * Sets the locale for the application to the provided language code.
+ * 
+ * @param code The language code.
+ * @example
+ * setLocale('el'); // Set the locale to 'el'
+ */
+export const setLocale = (code: string) => {
+    if (!iso6391.validate(code))
+        throw new Error(`Invalid locale code: ${code}`);
+
+    i18n.changeLanguage(code);
+    localStorage.setItem('locale', code);
+};
+
+/**
  * Sets up the i18n instance to use the given resources.
  * 
  * @param resources The resources to use. The keys are the language codes and the values are the corresponding resources.
